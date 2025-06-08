@@ -28,18 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
+            btCadastroClientes = new Button();
+            btCadastroProdutos = new Button();
+            btCadastroPedidos = new Button();
+            btCadastroUsuario = new Button();
             SuspendLayout();
+            // 
+            // btCadastroClientes
+            // 
+            btCadastroClientes.Location = new Point(12, 12);
+            btCadastroClientes.Name = "btCadastroClientes";
+            btCadastroClientes.Size = new Size(179, 66);
+            btCadastroClientes.TabIndex = 0;
+            btCadastroClientes.Text = "Cadastro de Clientes";
+            btCadastroClientes.UseVisualStyleBackColor = true;
+            // 
+            // btCadastroProdutos
+            // 
+            btCadastroProdutos.Location = new Point(251, 12);
+            btCadastroProdutos.Name = "btCadastroProdutos";
+            btCadastroProdutos.Size = new Size(179, 66);
+            btCadastroProdutos.TabIndex = 1;
+            btCadastroProdutos.Text = "Cadastro de Produtos";
+            btCadastroProdutos.UseVisualStyleBackColor = true;
+            // 
+            // btCadastroPedidos
+            // 
+            btCadastroPedidos.Location = new Point(12, 123);
+            btCadastroPedidos.Name = "btCadastroPedidos";
+            btCadastroPedidos.Size = new Size(179, 66);
+            btCadastroPedidos.TabIndex = 2;
+            btCadastroPedidos.Text = "Cadastro de Pedidos";
+            btCadastroPedidos.UseVisualStyleBackColor = true;
+            // 
+            // btCadastroUsuario
+            // 
+            btCadastroUsuario.Location = new Point(251, 123);
+            btCadastroUsuario.Name = "btCadastroUsuario";
+            btCadastroUsuario.Size = new Size(179, 66);
+            btCadastroUsuario.TabIndex = 3;
+            btCadastroUsuario.Text = "Cadastro de Usuario";
+            btCadastroUsuario.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(448, 205);
+            Controls.Add(btCadastroUsuario);
+            Controls.Add(btCadastroPedidos);
+            Controls.Add(btCadastroProdutos);
+            Controls.Add(btCadastroClientes);
             Name = "frmPrincipal";
             Text = "Principal";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btCadastroClientes;
+        private Button btCadastroProdutos;
+        private Button btCadastroPedidos;
+        private Button btCadastroUsuario;
     }
 }
