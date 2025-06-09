@@ -9,9 +9,12 @@ namespace P22
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "admin" && txtSenha.Text == "1234")
+            string caminhoCsv = "Clientes.csv";
+            string Usuario = txtUsuario.Text;
+            string Senha = txtSenha.Text;
+            if (txtUsuario.Text == Usuario && txtSenha.Text == Senha)
             {
-                MessageBox.Show("Login successful!");
+                
                 frmPrincipal principalForm = new frmPrincipal();
                 principalForm.Show();
                 this.Hide();
@@ -19,7 +22,7 @@ namespace P22
             }
             else
             {
-                MessageBox.Show("Invalid username or password.");
+                MessageBox.Show("Senha ou usuário inválidos");
             }
         }
     }

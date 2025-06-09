@@ -48,7 +48,7 @@ namespace P22
 
         private void btMudarSenha_Click(object sender, EventArgs e)
         {
-
+            txtUsuario.Text= frmLogin.Usuario;
         }
     }
 }
