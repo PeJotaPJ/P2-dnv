@@ -28,7 +28,7 @@ namespace P22
                 txtConfirmar.Clear();
                 txtSenha.Focus();
             }
-            string caminhoCsv = "Clientes.csv";
+            string caminhoCsv = "Usuários.csv";
             string Usuario = txtUsuario.Text;
             string Senha = txtSenha.Text;
             bool arquivoExiste = File.Exists(caminhoCsv);
@@ -49,7 +49,7 @@ namespace P22
 
         private void btMudarSenha_Click(object sender, EventArgs e)
         {
-            string caminhoCsv = "Clientes.csv";
+            string caminhoCsv = "Usuários.csv";
 
             // Verifica se as senhas coincidem
             if (txtSenha.Text != txtConfirmar.Text)

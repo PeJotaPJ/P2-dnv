@@ -9,7 +9,7 @@ namespace P22
 
         private void btLogin_Click(object sender, EventArgs e)
         {
-            string caminhoCsv = "Clientes.csv";
+            string caminhoCsv = "Usuários.csv";
             string Usuario = txtUsuario.Text;
             string Senha = txtSenha.Text;
             if (txtUsuario.Text == Usuario && txtSenha.Text == Senha)
