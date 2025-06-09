@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace P22
 {
-    public partial class Cadastro_de_Cliente: Form
+    public partial class Cadastro_de_Cliente : Form
     {
         public Cadastro_de_Cliente()
         {
             InitializeComponent();
+        }
+
+        private void maskedTextBox2_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }
