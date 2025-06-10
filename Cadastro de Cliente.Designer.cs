@@ -251,6 +251,7 @@
             btBuscarCEP.TabIndex = 25;
             btBuscarCEP.Text = "Buscar CEP";
             btBuscarCEP.UseVisualStyleBackColor = true;
+            btBuscarCEP.Click += btBuscarCEP_Click;
             // 
             // Cadastro_de_Cliente
             // 

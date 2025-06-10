@@ -93,6 +93,19 @@ namespace P22
             txtTelefone.Clear();
             txtWhatsapp.Clear();
         }
+
+        private async void btBuscarCEP_Click(object sender, EventArgs e)
+        {
+            string cep = txtCEP.Text.Trim().Replace("-", "");
+            if (cep.Length == 8)
+            {
+                await PreencherEnderecoPorCEP(cep);
+            }
+            else
+            {
+                MessageBox.Show("Digite um CEP válido com 8 dígitos.");
+            }
+        }
     }
 
     public class ViaCepResponse
