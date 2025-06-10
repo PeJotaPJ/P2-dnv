@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            txtNome = new TextBox();
             label1 = new Label();
-            maskedTextBox1 = new MaskedTextBox();
+            txtCPF = new MaskedTextBox();
             label2 = new Label();
             label3 = new Label();
-            textBox2 = new TextBox();
-            maskedTextBox2 = new MaskedTextBox();
+            txtEmail = new TextBox();
+            txtCEP = new MaskedTextBox();
             label4 = new Label();
             label5 = new Label();
-            maskedTextBox3 = new MaskedTextBox();
+            txtTelefone = new MaskedTextBox();
             label6 = new Label();
-            maskedTextBox4 = new MaskedTextBox();
-            textBox3 = new TextBox();
+            txtWhatsapp = new MaskedTextBox();
+            txtLogradouro = new TextBox();
             label7 = new Label();
             label8 = new Label();
-            textBox4 = new TextBox();
+            txtNúmero = new TextBox();
             label9 = new Label();
-            textBox5 = new TextBox();
+            txtBairro = new TextBox();
             label10 = new Label();
-            textBox6 = new TextBox();
+            txtCidade = new TextBox();
             label11 = new Label();
-            textBox7 = new TextBox();
+            txtEstado = new TextBox();
             btSalvar = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // txtNome
             // 
-            textBox1.Location = new Point(71, 60);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 0;
+            txtNome.Location = new Point(71, 60);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(100, 23);
+            txtNome.TabIndex = 0;
             // 
             // label1
             // 
@@ -69,13 +69,13 @@
             label1.TabIndex = 1;
             label1.Text = "Nome";
             // 
-            // maskedTextBox1
+            // txtCPF
             // 
-            maskedTextBox1.Location = new Point(71, 118);
-            maskedTextBox1.Mask = "000.000.000-00";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(100, 23);
-            maskedTextBox1.TabIndex = 2;
+            txtCPF.Location = new Point(71, 118);
+            txtCPF.Mask = "000.000.000-00";
+            txtCPF.Name = "txtCPF";
+            txtCPF.Size = new Size(100, 23);
+            txtCPF.TabIndex = 2;
             // 
             // label2
             // 
@@ -95,20 +95,20 @@
             label3.TabIndex = 5;
             label3.Text = "Email";
             // 
-            // textBox2
+            // txtEmail
             // 
-            textBox2.Location = new Point(71, 166);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 6;
+            txtEmail.Location = new Point(71, 166);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(100, 23);
+            txtEmail.TabIndex = 6;
             // 
-            // maskedTextBox2
+            // txtCEP
             // 
-            maskedTextBox2.Location = new Point(71, 226);
-            maskedTextBox2.Mask = "00000-000";
-            maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new Size(100, 23);
-            maskedTextBox2.TabIndex = 7;
+            txtCEP.Location = new Point(71, 226);
+            txtCEP.Mask = "00000-000";
+            txtCEP.Name = "txtCEP";
+            txtCEP.Size = new Size(100, 23);
+            txtCEP.TabIndex = 7;
             // 
             // label4
             // 
@@ -128,13 +128,13 @@
             label5.TabIndex = 10;
             label5.Text = "Telefone";
             // 
-            // maskedTextBox3
+            // txtTelefone
             // 
-            maskedTextBox3.Location = new Point(294, 60);
-            maskedTextBox3.Mask = "(99) 00000-0000";
-            maskedTextBox3.Name = "maskedTextBox3";
-            maskedTextBox3.Size = new Size(100, 23);
-            maskedTextBox3.TabIndex = 9;
+            txtTelefone.Location = new Point(294, 60);
+            txtTelefone.Mask = "(99) 00000-0000";
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.Size = new Size(100, 23);
+            txtTelefone.TabIndex = 9;
             // 
             // label6
             // 
@@ -145,20 +145,20 @@
             label6.TabIndex = 12;
             label6.Text = "Whatsapp";
             // 
-            // maskedTextBox4
+            // txtWhatsapp
             // 
-            maskedTextBox4.Location = new Point(294, 121);
-            maskedTextBox4.Mask = "(99) 00000-0000";
-            maskedTextBox4.Name = "maskedTextBox4";
-            maskedTextBox4.Size = new Size(100, 23);
-            maskedTextBox4.TabIndex = 11;
+            txtWhatsapp.Location = new Point(294, 121);
+            txtWhatsapp.Mask = "(99) 00000-0000";
+            txtWhatsapp.Name = "txtWhatsapp";
+            txtWhatsapp.Size = new Size(100, 23);
+            txtWhatsapp.TabIndex = 11;
             // 
-            // textBox3
+            // txtLogradouro
             // 
-            textBox3.Location = new Point(190, 226);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 13;
+            txtLogradouro.Location = new Point(190, 226);
+            txtLogradouro.Name = "txtLogradouro";
+            txtLogradouro.Size = new Size(100, 23);
+            txtLogradouro.TabIndex = 13;
             // 
             // label7
             // 
@@ -178,12 +178,12 @@
             label8.TabIndex = 16;
             label8.Text = "Número";
             // 
-            // textBox4
+            // txtNúmero
             // 
-            textBox4.Location = new Point(321, 226);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 15;
+            txtNúmero.Location = new Point(321, 226);
+            txtNúmero.Name = "txtNúmero";
+            txtNúmero.Size = new Size(100, 23);
+            txtNúmero.TabIndex = 15;
             // 
             // label9
             // 
@@ -194,12 +194,12 @@
             label9.TabIndex = 18;
             label9.Text = "Bairro";
             // 
-            // textBox5
+            // txtBairro
             // 
-            textBox5.Location = new Point(427, 226);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 17;
+            txtBairro.Location = new Point(427, 226);
+            txtBairro.Name = "txtBairro";
+            txtBairro.Size = new Size(100, 23);
+            txtBairro.TabIndex = 17;
             // 
             // label10
             // 
@@ -210,12 +210,12 @@
             label10.TabIndex = 20;
             label10.Text = "Cidade";
             // 
-            // textBox6
+            // txtCidade
             // 
-            textBox6.Location = new Point(533, 226);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 19;
+            txtCidade.Location = new Point(533, 226);
+            txtCidade.Name = "txtCidade";
+            txtCidade.Size = new Size(100, 23);
+            txtCidade.TabIndex = 19;
             // 
             // label11
             // 
@@ -226,12 +226,12 @@
             label11.TabIndex = 22;
             label11.Text = "Estado";
             // 
-            // textBox7
+            // txtEstado
             // 
-            textBox7.Location = new Point(639, 226);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 23);
-            textBox7.TabIndex = 21;
+            txtEstado.Location = new Point(639, 226);
+            txtEstado.Name = "txtEstado";
+            txtEstado.Size = new Size(100, 23);
+            txtEstado.TabIndex = 21;
             // 
             // btSalvar
             // 
@@ -249,27 +249,27 @@
             ClientSize = new Size(800, 360);
             Controls.Add(btSalvar);
             Controls.Add(label11);
-            Controls.Add(textBox7);
+            Controls.Add(txtEstado);
             Controls.Add(label10);
-            Controls.Add(textBox6);
+            Controls.Add(txtCidade);
             Controls.Add(label9);
-            Controls.Add(textBox5);
+            Controls.Add(txtBairro);
             Controls.Add(label8);
-            Controls.Add(textBox4);
+            Controls.Add(txtNúmero);
             Controls.Add(label7);
-            Controls.Add(textBox3);
+            Controls.Add(txtLogradouro);
             Controls.Add(label6);
-            Controls.Add(maskedTextBox4);
+            Controls.Add(txtWhatsapp);
             Controls.Add(label5);
-            Controls.Add(maskedTextBox3);
+            Controls.Add(txtTelefone);
             Controls.Add(label4);
-            Controls.Add(maskedTextBox2);
-            Controls.Add(textBox2);
+            Controls.Add(txtCEP);
+            Controls.Add(txtEmail);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(maskedTextBox1);
+            Controls.Add(txtCPF);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtNome);
             Name = "Cadastro_de_Cliente";
             Text = "Cadastro_de_Cliente";
             ResumeLayout(false);
@@ -278,28 +278,28 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox txtNome;
         private Label label1;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox txtCPF;
         private Label label2;
         private Label label3;
-        private TextBox textBox2;
-        private MaskedTextBox maskedTextBox2;
+        private TextBox txtEmail;
+        private MaskedTextBox txtCEP;
         private Label label4;
         private Label label5;
-        private MaskedTextBox maskedTextBox3;
+        private MaskedTextBox txtTelefone;
         private Label label6;
-        private MaskedTextBox maskedTextBox4;
-        private TextBox textBox3;
+        private MaskedTextBox txtWhatsapp;
+        private TextBox txtLogradouro;
         private Label label7;
         private Label label8;
-        private TextBox textBox4;
+        private TextBox txtNúmero;
         private Label label9;
-        private TextBox textBox5;
+        private TextBox txtBairro;
         private Label label10;
-        private TextBox textBox6;
+        private TextBox txtCidade;
         private Label label11;
-        private TextBox textBox7;
+        private TextBox txtEstado;
         private Button btSalvar;
     }
 }
