@@ -34,7 +34,6 @@
             label2 = new Label();
             label3 = new Label();
             txtEmail = new TextBox();
-            txtCEP = new MaskedTextBox();
             label4 = new Label();
             label5 = new Label();
             txtTelefone = new MaskedTextBox();
@@ -43,7 +42,7 @@
             txtLogradouro = new TextBox();
             label7 = new Label();
             label8 = new Label();
-            txtNúmero = new TextBox();
+            txtNumero = new TextBox();
             label9 = new Label();
             txtBairro = new TextBox();
             label10 = new Label();
@@ -51,6 +50,8 @@
             label11 = new Label();
             txtEstado = new TextBox();
             btSalvar = new Button();
+            txtCEP = new TextBox();
+            btBuscarCEP = new Button();
             SuspendLayout();
             // 
             // txtNome
@@ -101,14 +102,6 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(100, 23);
             txtEmail.TabIndex = 6;
-            // 
-            // txtCEP
-            // 
-            txtCEP.Location = new Point(71, 226);
-            txtCEP.Mask = "00000-000";
-            txtCEP.Name = "txtCEP";
-            txtCEP.Size = new Size(100, 23);
-            txtCEP.TabIndex = 7;
             // 
             // label4
             // 
@@ -178,12 +171,12 @@
             label8.TabIndex = 16;
             label8.Text = "Número";
             // 
-            // txtNúmero
+            // txtNumero
             // 
-            txtNúmero.Location = new Point(321, 226);
-            txtNúmero.Name = "txtNúmero";
-            txtNúmero.Size = new Size(100, 23);
-            txtNúmero.TabIndex = 15;
+            txtNumero.Location = new Point(321, 226);
+            txtNumero.Name = "txtNumero";
+            txtNumero.Size = new Size(100, 23);
+            txtNumero.TabIndex = 15;
             // 
             // label9
             // 
@@ -241,12 +234,31 @@
             btSalvar.TabIndex = 23;
             btSalvar.Text = "Salvar";
             btSalvar.UseVisualStyleBackColor = true;
+            btSalvar.Click += btSalvar_Click;
+            // 
+            // txtCEP
+            // 
+            txtCEP.Location = new Point(71, 226);
+            txtCEP.Name = "txtCEP";
+            txtCEP.Size = new Size(100, 23);
+            txtCEP.TabIndex = 24;
+            // 
+            // btBuscarCEP
+            // 
+            btBuscarCEP.Location = new Point(96, 255);
+            btBuscarCEP.Name = "btBuscarCEP";
+            btBuscarCEP.Size = new Size(75, 23);
+            btBuscarCEP.TabIndex = 25;
+            btBuscarCEP.Text = "Buscar CEP";
+            btBuscarCEP.UseVisualStyleBackColor = true;
             // 
             // Cadastro_de_Cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 360);
+            Controls.Add(btBuscarCEP);
+            Controls.Add(txtCEP);
             Controls.Add(btSalvar);
             Controls.Add(label11);
             Controls.Add(txtEstado);
@@ -255,7 +267,7 @@
             Controls.Add(label9);
             Controls.Add(txtBairro);
             Controls.Add(label8);
-            Controls.Add(txtNúmero);
+            Controls.Add(txtNumero);
             Controls.Add(label7);
             Controls.Add(txtLogradouro);
             Controls.Add(label6);
@@ -263,7 +275,6 @@
             Controls.Add(label5);
             Controls.Add(txtTelefone);
             Controls.Add(label4);
-            Controls.Add(txtCEP);
             Controls.Add(txtEmail);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -284,7 +295,6 @@
         private Label label2;
         private Label label3;
         private TextBox txtEmail;
-        private MaskedTextBox txtCEP;
         private Label label4;
         private Label label5;
         private MaskedTextBox txtTelefone;
@@ -293,7 +303,7 @@
         private TextBox txtLogradouro;
         private Label label7;
         private Label label8;
-        private TextBox txtNúmero;
+        private TextBox txtNumero;
         private Label label9;
         private TextBox txtBairro;
         private Label label10;
@@ -301,5 +311,7 @@
         private Label label11;
         private TextBox txtEstado;
         private Button btSalvar;
+        private TextBox txtCEP;
+        private Button btBuscarCEP;
     }
 }
