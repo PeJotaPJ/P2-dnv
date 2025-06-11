@@ -30,7 +30,6 @@
         {
             txtNome = new TextBox();
             label1 = new Label();
-            txtCPF = new MaskedTextBox();
             label2 = new Label();
             label3 = new Label();
             txtEmail = new TextBox();
@@ -55,6 +54,7 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             btExcluir = new Button();
             lbClientes = new ListBox();
+            txtCPF = new TextBox();
             SuspendLayout();
             // 
             // txtNome
@@ -72,14 +72,6 @@
             label1.Size = new Size(40, 15);
             label1.TabIndex = 1;
             label1.Text = "Nome";
-            // 
-            // txtCPF
-            // 
-            txtCPF.Location = new Point(71, 118);
-            txtCPF.Mask = "000.000.000-00";
-            txtCPF.Name = "txtCPF";
-            txtCPF.Size = new Size(100, 23);
-            txtCPF.TabIndex = 2;
             // 
             // label2
             // 
@@ -276,11 +268,19 @@
             lbClientes.SelectedIndexChanged += lbClientes_SelectedIndexChanged;
             lbClientes.DoubleClick += lbClientes_DoubleClick;
             // 
+            // txtCPF
+            // 
+            txtCPF.Location = new Point(71, 118);
+            txtCPF.Name = "txtCPF";
+            txtCPF.Size = new Size(154, 23);
+            txtCPF.TabIndex = 29;
+            // 
             // Cadastro_de_Cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(853, 391);
+            Controls.Add(txtCPF);
             Controls.Add(lbClientes);
             Controls.Add(btExcluir);
             Controls.Add(btBuscarCEP);
@@ -304,7 +304,6 @@
             Controls.Add(txtEmail);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(txtCPF);
             Controls.Add(label1);
             Controls.Add(txtNome);
             Name = "Cadastro_de_Cliente";
@@ -318,7 +317,6 @@
 
         private TextBox txtNome;
         private Label label1;
-        private MaskedTextBox txtCPF;
         private Label label2;
         private Label label3;
         private TextBox txtEmail;
@@ -343,5 +341,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button btExcluir;
         private ListBox lbClientes;
+        private TextBox txtCPF;
     }
 }
