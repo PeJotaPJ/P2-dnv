@@ -76,9 +76,7 @@ namespace P22
             }
 
             // Adicione o cliente ao ListView
-            var item = new ListViewItem(txtNome.Text);
-            item.SubItems.Add(txtCPF.Text); // CPF na segunda coluna
-            // Adicione outros subitens conforme necessário
+            var item = new ListViewItem(txtCPF.Text);
             lvClientes.Items.Add(item);
 
             MessageBox.Show("Cliente cadastrado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -115,7 +113,29 @@ namespace P22
 
         private void lvClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
+        }
+        private void CarregarClientesNoListView()
+        {
+            string caminhoCsv = "Clientes.csv";
+            lvClientes.Items.Clear();
 
+            if (!File.Exists(caminhoCsv))
+                return;
+
+            var linhas = File.ReadAllLines(caminhoCsv);
+            // Começa do índice 1 para pular o cabeçalho
+            for (int i = 1; i < linhas.Length; i++)
+            {
+                var partes = linhas[i].Split(',');
+                if (partes.Length >= 2)
+                {
+                    var item = new ListViewItem(partes[0]); // Nome
+                    item.SubItems.Add(partes[1]);           // CPF
+                    // Adicione outros subitens se desejar mostrar mais dados
+                    lvClientes.Items.Add(item);
+                }
+            }
         }
     }
 
