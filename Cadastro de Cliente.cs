@@ -75,10 +75,14 @@ namespace P22
                 sw.WriteLine($"{txtNome.Text},{txtCPF.Text},{txtEmail.Text},{txtCEP.Text},{txtLogradouro.Text},{txtNumero.Text},{txtBairro.Text},{txtCidade.Text},{txtEstado.Text},{txtTelefone.Text},{txtWhatsapp.Text}");
             }
 
+            // Adicione o cliente ao ListView
+            var item = new ListViewItem(txtNome.Text);
+            item.SubItems.Add(txtCPF.Text); // CPF na segunda coluna
+            // Adicione outros subitens conforme necessário
+            lvClientes.Items.Add(item);
+
             MessageBox.Show("Cliente cadastrado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LimparCampos();
-
-            txtCPF.Text
         }
 
         private void LimparCampos()
@@ -107,6 +111,11 @@ namespace P22
             {
                 MessageBox.Show("Digite um CEP válido com 8 dígitos.");
             }
+        }
+
+        private void lvClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

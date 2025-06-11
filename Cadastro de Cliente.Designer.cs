@@ -264,6 +264,7 @@
             lvClientes.Size = new Size(121, 247);
             lvClientes.TabIndex = 26;
             lvClientes.UseCompatibleStateImageBehavior = false;
+            lvClientes.SelectedIndexChanged += lvClientes_SelectedIndexChanged;
             // 
             // btExcluir
             // 
