@@ -75,7 +75,6 @@ namespace P22
                 sw.WriteLine($"{txtNome.Text},{txtCPF.Text},{txtEmail.Text},{txtCEP.Text},{txtLogradouro.Text},{txtNumero.Text},{txtBairro.Text},{txtCidade.Text},{txtEstado.Text},{txtTelefone.Text},{txtWhatsapp.Text}");
             }
 
-            // Adicione o cliente ao ListView
             var item = new ListViewItem(txtCPF.Text);
             lvClientes.Items.Add(item);
 
@@ -113,27 +112,87 @@ namespace P22
 
         private void lvClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-        }
-        private void CarregarClientesNoListView()
-        {
-            string caminhoCsv = "Clientes.csv";
-            lvClientes.Items.Clear();
 
+        }
+
+        private void btExcluir_Click(object sender, EventArgs e)
+        {
+            if (lvClientes.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Selecione um CPF para excluir.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Obtém o CPF selecionado
+            string cpfSelecionado = lvClientes.SelectedItems[0].Text;
+
+            string caminhoCsv = "Clientes.csv";
+            if (!File.Exists(caminhoCsv))
+                return;
+
+            // Lê todas as linhas do arquivo
+            var linhas = File.ReadAllLines(caminhoCsv).ToList();
+
+            // Mantém o cabeçalho
+            var novasLinhas = new List<string> { linhas[0] };
+
+            // Adiciona todas as linhas exceto a do CPF selecionado
+            for (int i = 1; i < linhas.Count; i++)
+            {
+                var partes = linhas[i].Split(',');
+                if (partes.Length > 1 && partes[1].Trim() != cpfSelecionado)
+                {
+                    novasLinhas.Add(linhas[i]);
+                }
+            }
+
+            // Reescreve o arquivo sem o cliente excluído
+            File.WriteAllLines(caminhoCsv, novasLinhas, Encoding.UTF8);
+
+            // Remove do ListView
+            lvClientes.Items.Remove(lvClientes.SelectedItems[0]);
+
+            MessageBox.Show("Cliente excluído com sucesso!", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void Cadastro_de_Cliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvClientes_DoubleClick(object sender, EventArgs e)
+        {
+            if (lvClientes.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Selecione um CPF para editar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string cpfSelecionado = lvClientes.SelectedItems[0].Text;
+            string caminhoCsv = "Clientes.csv";
             if (!File.Exists(caminhoCsv))
                 return;
 
             var linhas = File.ReadAllLines(caminhoCsv);
-            // Começa do índice 1 para pular o cabeçalho
+
+            // Procura o cliente pelo CPF (pulando o cabeçalho)
             for (int i = 1; i < linhas.Length; i++)
             {
                 var partes = linhas[i].Split(',');
-                if (partes.Length >= 2)
+                if (partes.Length >= 11 && partes[1].Trim() == cpfSelecionado)
                 {
-                    var item = new ListViewItem(partes[0]); // Nome
-                    item.SubItems.Add(partes[1]);           // CPF
-                    // Adicione outros subitens se desejar mostrar mais dados
-                    lvClientes.Items.Add(item);
+                    txtNome.Text = partes[0];
+                    txtCPF.Text = partes[1];
+                    txtEmail.Text = partes[2];
+                    txtCEP.Text = partes[3];
+                    txtLogradouro.Text = partes[4];
+                    txtNumero.Text = partes[5];
+                    txtBairro.Text = partes[6];
+                    txtCidade.Text = partes[7];
+                    txtEstado.Text = partes[8];
+                    txtTelefone.Text = partes[9];
+                    txtWhatsapp.Text = partes[10];
+                    break;
                 }
             }
         }

@@ -53,6 +53,7 @@
             txtCEP = new TextBox();
             btBuscarCEP = new Button();
             lvClientes = new ListView();
+            CPF = new ColumnHeader();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             btExcluir = new Button();
             btEditar = new Button();
@@ -259,12 +260,20 @@
             // 
             // lvClientes
             // 
+            lvClientes.Columns.AddRange(new ColumnHeader[] { CPF });
             lvClientes.Location = new Point(631, 47);
             lvClientes.Name = "lvClientes";
             lvClientes.Size = new Size(121, 247);
             lvClientes.TabIndex = 26;
             lvClientes.UseCompatibleStateImageBehavior = false;
+            lvClientes.View = View.List;
             lvClientes.SelectedIndexChanged += lvClientes_SelectedIndexChanged;
+            lvClientes.DoubleClick += lvClientes_DoubleClick;
+            // 
+            // CPF
+            // 
+            CPF.Text = "CPF";
+            CPF.Width = 100;
             // 
             // btExcluir
             // 
@@ -274,6 +283,7 @@
             btExcluir.TabIndex = 27;
             btExcluir.Text = "Excluir";
             btExcluir.UseVisualStyleBackColor = true;
+            btExcluir.Click += btExcluir_Click;
             // 
             // btEditar
             // 
@@ -318,6 +328,7 @@
             Controls.Add(txtNome);
             Name = "Cadastro_de_Cliente";
             Text = "Cadastro_de_Cliente";
+            Load += Cadastro_de_Cliente_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -352,5 +363,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button btExcluir;
         private Button btEditar;
+        private ColumnHeader CPF;
     }
 }
