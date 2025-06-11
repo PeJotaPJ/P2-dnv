@@ -28,12 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Cadastro_de_Produtos";
+            textBox1 = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            textBox2 = new TextBox();
+            label3 = new Label();
+            textBox3 = new TextBox();
+            SuspendLayout();
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(26, 35);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(140, 23);
+            textBox1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(26, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Produto";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(26, 73);
+            label2.Name = "label2";
+            label2.Size = new Size(37, 15);
+            label2.TabIndex = 3;
+            label2.Text = "Preço";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(26, 91);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(140, 23);
+            textBox2.TabIndex = 2;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(26, 119);
+            label3.Name = "label3";
+            label3.Size = new Size(58, 15);
+            label3.TabIndex = 5;
+            label3.Text = "Descrição";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(26, 137);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(140, 99);
+            textBox3.TabIndex = 4;
+            // 
+            // Cadastro_de_Produtos
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(label3);
+            Controls.Add(textBox3);
+            Controls.Add(label2);
+            Controls.Add(textBox2);
+            Controls.Add(label1);
+            Controls.Add(textBox1);
+            Name = "Cadastro_de_Produtos";
+            Text = "Cadastro_de_Produtos";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox textBox1;
+        private Label label1;
+        private Label label2;
+        private TextBox textBox2;
+        private Label label3;
+        private TextBox textBox3;
     }
 }

@@ -52,6 +52,10 @@
             btSalvar = new Button();
             txtCEP = new TextBox();
             btBuscarCEP = new Button();
+            lvClientes = new ListView();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            btExcluir = new Button();
+            btEditar = new Button();
             SuspendLayout();
             // 
             // txtNome
@@ -148,7 +152,7 @@
             // 
             // txtLogradouro
             // 
-            txtLogradouro.Location = new Point(190, 226);
+            txtLogradouro.Location = new Point(71, 297);
             txtLogradouro.Name = "txtLogradouro";
             txtLogradouro.Size = new Size(100, 23);
             txtLogradouro.TabIndex = 13;
@@ -156,7 +160,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(190, 208);
+            label7.Location = new Point(71, 279);
             label7.Name = "label7";
             label7.Size = new Size(69, 15);
             label7.TabIndex = 14;
@@ -165,7 +169,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(321, 208);
+            label8.Location = new Point(202, 279);
             label8.Name = "label8";
             label8.Size = new Size(51, 15);
             label8.TabIndex = 16;
@@ -173,7 +177,7 @@
             // 
             // txtNumero
             // 
-            txtNumero.Location = new Point(321, 226);
+            txtNumero.Location = new Point(202, 297);
             txtNumero.Name = "txtNumero";
             txtNumero.Size = new Size(100, 23);
             txtNumero.TabIndex = 15;
@@ -181,7 +185,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(427, 208);
+            label9.Location = new Point(308, 279);
             label9.Name = "label9";
             label9.Size = new Size(38, 15);
             label9.TabIndex = 18;
@@ -189,7 +193,7 @@
             // 
             // txtBairro
             // 
-            txtBairro.Location = new Point(427, 226);
+            txtBairro.Location = new Point(308, 297);
             txtBairro.Name = "txtBairro";
             txtBairro.Size = new Size(100, 23);
             txtBairro.TabIndex = 17;
@@ -197,7 +201,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(533, 208);
+            label10.Location = new Point(414, 279);
             label10.Name = "label10";
             label10.Size = new Size(44, 15);
             label10.TabIndex = 20;
@@ -205,7 +209,7 @@
             // 
             // txtCidade
             // 
-            txtCidade.Location = new Point(533, 226);
+            txtCidade.Location = new Point(414, 297);
             txtCidade.Name = "txtCidade";
             txtCidade.Size = new Size(100, 23);
             txtCidade.TabIndex = 19;
@@ -213,7 +217,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(639, 208);
+            label11.Location = new Point(520, 279);
             label11.Name = "label11";
             label11.Size = new Size(42, 15);
             label11.TabIndex = 22;
@@ -221,14 +225,14 @@
             // 
             // txtEstado
             // 
-            txtEstado.Location = new Point(639, 226);
+            txtEstado.Location = new Point(520, 297);
             txtEstado.Name = "txtEstado";
             txtEstado.Size = new Size(100, 23);
             txtEstado.TabIndex = 21;
             // 
             // btSalvar
             // 
-            btSalvar.Location = new Point(558, 323);
+            btSalvar.Location = new Point(545, 365);
             btSalvar.Name = "btSalvar";
             btSalvar.Size = new Size(75, 23);
             btSalvar.TabIndex = 23;
@@ -253,11 +257,40 @@
             btBuscarCEP.UseVisualStyleBackColor = true;
             btBuscarCEP.Click += btBuscarCEP_Click;
             // 
+            // lvClientes
+            // 
+            lvClientes.Location = new Point(631, 47);
+            lvClientes.Name = "lvClientes";
+            lvClientes.Size = new Size(121, 247);
+            lvClientes.TabIndex = 26;
+            lvClientes.UseCompatibleStateImageBehavior = false;
+            // 
+            // btExcluir
+            // 
+            btExcluir.Location = new Point(464, 365);
+            btExcluir.Name = "btExcluir";
+            btExcluir.Size = new Size(75, 23);
+            btExcluir.TabIndex = 27;
+            btExcluir.Text = "Excluir";
+            btExcluir.UseVisualStyleBackColor = true;
+            // 
+            // btEditar
+            // 
+            btEditar.Location = new Point(383, 365);
+            btEditar.Name = "btEditar";
+            btEditar.Size = new Size(75, 23);
+            btEditar.TabIndex = 28;
+            btEditar.Text = "Editar";
+            btEditar.UseVisualStyleBackColor = true;
+            // 
             // Cadastro_de_Cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 360);
+            ClientSize = new Size(770, 391);
+            Controls.Add(btEditar);
+            Controls.Add(btExcluir);
+            Controls.Add(lvClientes);
             Controls.Add(btBuscarCEP);
             Controls.Add(txtCEP);
             Controls.Add(btSalvar);
@@ -314,5 +347,9 @@
         private Button btSalvar;
         private TextBox txtCEP;
         private Button btBuscarCEP;
+        private ListView lvClientes;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Button btExcluir;
+        private Button btEditar;
     }
 }

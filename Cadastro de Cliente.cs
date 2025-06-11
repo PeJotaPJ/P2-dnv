@@ -77,6 +77,8 @@ namespace P22
 
             MessageBox.Show("Cliente cadastrado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LimparCampos();
+
+            txtCPF.Text
         }
 
         private void LimparCampos()
