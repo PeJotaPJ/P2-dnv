@@ -52,18 +52,16 @@
             btSalvar = new Button();
             txtCEP = new TextBox();
             btBuscarCEP = new Button();
-            lvClientes = new ListView();
-            CPF = new ColumnHeader();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             btExcluir = new Button();
-            btEditar = new Button();
+            lbClientes = new ListBox();
             SuspendLayout();
             // 
             // txtNome
             // 
             txtNome.Location = new Point(71, 60);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(100, 23);
+            txtNome.Size = new Size(154, 23);
             txtNome.TabIndex = 0;
             // 
             // label1
@@ -105,7 +103,7 @@
             // 
             txtEmail.Location = new Point(71, 166);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(100, 23);
+            txtEmail.Size = new Size(154, 23);
             txtEmail.TabIndex = 6;
             // 
             // label4
@@ -258,23 +256,6 @@
             btBuscarCEP.UseVisualStyleBackColor = true;
             btBuscarCEP.Click += btBuscarCEP_Click;
             // 
-            // lvClientes
-            // 
-            lvClientes.Columns.AddRange(new ColumnHeader[] { CPF });
-            lvClientes.Location = new Point(631, 47);
-            lvClientes.Name = "lvClientes";
-            lvClientes.Size = new Size(121, 247);
-            lvClientes.TabIndex = 26;
-            lvClientes.UseCompatibleStateImageBehavior = false;
-            lvClientes.View = View.List;
-            lvClientes.SelectedIndexChanged += lvClientes_SelectedIndexChanged;
-            lvClientes.DoubleClick += lvClientes_DoubleClick;
-            // 
-            // CPF
-            // 
-            CPF.Text = "CPF";
-            CPF.Width = 100;
-            // 
             // btExcluir
             // 
             btExcluir.Location = new Point(464, 365);
@@ -285,23 +266,23 @@
             btExcluir.UseVisualStyleBackColor = true;
             btExcluir.Click += btExcluir_Click;
             // 
-            // btEditar
+            // lbClientes
             // 
-            btEditar.Location = new Point(383, 365);
-            btEditar.Name = "btEditar";
-            btEditar.Size = new Size(75, 23);
-            btEditar.TabIndex = 28;
-            btEditar.Text = "Editar";
-            btEditar.UseVisualStyleBackColor = true;
+            lbClientes.FormattingEnabled = true;
+            lbClientes.Location = new Point(656, 50);
+            lbClientes.Name = "lbClientes";
+            lbClientes.Size = new Size(185, 229);
+            lbClientes.TabIndex = 28;
+            lbClientes.SelectedIndexChanged += lbClientes_SelectedIndexChanged;
+            lbClientes.DoubleClick += lbClientes_DoubleClick;
             // 
             // Cadastro_de_Cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(770, 391);
-            Controls.Add(btEditar);
+            ClientSize = new Size(853, 391);
+            Controls.Add(lbClientes);
             Controls.Add(btExcluir);
-            Controls.Add(lvClientes);
             Controls.Add(btBuscarCEP);
             Controls.Add(txtCEP);
             Controls.Add(btSalvar);
@@ -359,10 +340,8 @@
         private Button btSalvar;
         private TextBox txtCEP;
         private Button btBuscarCEP;
-        private ListView lvClientes;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button btExcluir;
-        private Button btEditar;
-        private ColumnHeader CPF;
+        private ListBox lbClientes;
     }
 }

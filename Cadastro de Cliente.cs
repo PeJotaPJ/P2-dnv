@@ -75,11 +75,9 @@ namespace P22
                 sw.WriteLine($"{txtNome.Text},{txtCPF.Text},{txtEmail.Text},{txtCEP.Text},{txtLogradouro.Text},{txtNumero.Text},{txtBairro.Text},{txtCidade.Text},{txtEstado.Text},{txtTelefone.Text},{txtWhatsapp.Text}");
             }
 
-            var item = new ListViewItem(txtCPF.Text);
-            lvClientes.Items.Add(item);
-
             MessageBox.Show("Cliente cadastrado com sucesso!", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LimparCampos();
+            CarregarClientesNoListBox();
         }
 
         private void LimparCampos()
@@ -110,21 +108,22 @@ namespace P22
             }
         }
 
-        private void lvClientes_SelectedIndexChanged(object sender, EventArgs e)
+        private void lbClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            // Pode ser usado para habilitar/desabilitar botões, se desejar
         }
 
         private void btExcluir_Click(object sender, EventArgs e)
         {
-            if (lvClientes.SelectedItems.Count == 0)
+            if (lbClientes.SelectedIndex == -1)
             {
-                MessageBox.Show("Selecione um CPF para excluir.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione um cliente para excluir.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Obtém o CPF selecionado
-            string cpfSelecionado = lvClientes.SelectedItems[0].Text;
+            // Obtém o CPF do item selecionado (antes do " - ")
+            string itemSelecionado = lbClientes.SelectedItem.ToString();
+            string cpfSelecionado = itemSelecionado.Split('-')[0].Trim();
 
             string caminhoCsv = "Clientes.csv";
             if (!File.Exists(caminhoCsv))
@@ -149,26 +148,29 @@ namespace P22
             // Reescreve o arquivo sem o cliente excluído
             File.WriteAllLines(caminhoCsv, novasLinhas, Encoding.UTF8);
 
-            // Remove do ListView
-            lvClientes.Items.Remove(lvClientes.SelectedItems[0]);
+            // Remove do ListBox
+            lbClientes.Items.RemoveAt(lbClientes.SelectedIndex);
 
             MessageBox.Show("Cliente excluído com sucesso!", "Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            CarregarClientesNoListBox();
         }
 
         private void Cadastro_de_Cliente_Load(object sender, EventArgs e)
         {
-
+            CarregarClientesNoListBox();
         }
 
-        private void lvClientes_DoubleClick(object sender, EventArgs e)
+        private void lbClientes_DoubleClick(object sender, EventArgs e)
         {
-            if (lvClientes.SelectedItems.Count == 0)
+            if (lbClientes.SelectedIndex == -1)
             {
-                MessageBox.Show("Selecione um CPF para editar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione um cliente para editar.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string cpfSelecionado = lvClientes.SelectedItems[0].Text;
+            string itemSelecionado = lbClientes.SelectedItem.ToString();
+            string cpfSelecionado = itemSelecionado.Split('-')[0].Trim();
             string caminhoCsv = "Clientes.csv";
             if (!File.Exists(caminhoCsv))
                 return;
@@ -193,6 +195,27 @@ namespace P22
                     txtTelefone.Text = partes[9];
                     txtWhatsapp.Text = partes[10];
                     break;
+                }
+            }
+        }
+
+        private void CarregarClientesNoListBox()
+        {
+            string caminhoCsv = "Clientes.csv";
+            lbClientes.Items.Clear();
+
+            if (!File.Exists(caminhoCsv))
+                return;
+
+            var linhas = File.ReadAllLines(caminhoCsv);
+            // Começa do índice 1 para pular o cabeçalho
+            for (int i = 1; i < linhas.Length; i++)
+            {
+                var partes = linhas[i].Split(',');
+                if (partes.Length >= 2)
+                {
+                    // Exibe CPF - Nome
+                    lbClientes.Items.Add($"{partes[1].Trim()} - {partes[0].Trim()}");
                 }
             }
         }
