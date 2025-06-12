@@ -181,19 +181,21 @@ namespace P22
             for (int i = 1; i < linhas.Length; i++)
             {
                 var partes = linhas[i].Split(',');
+
+                // Garante que o array tenha pelo menos 11 posições
                 if (partes.Length >= 11 && partes[1].Trim() == cpfSelecionado)
                 {
-                    txtNome.Text = partes[0];
-                    txtCPF.Text = partes[1];
-                    txtEmail.Text = partes[2];
-                    txtCEP.Text = partes[3];
-                    txtLogradouro.Text = partes[4];
-                    txtNumero.Text = partes[5];
-                    txtBairro.Text = partes[6];
-                    txtCidade.Text = partes[7];
-                    txtEstado.Text = partes[8];
-                    txtTelefone.Text = partes[9];
-                    txtWhatsapp.Text = partes[10];
+                    txtNome.Text = partes[0].Trim();
+                    txtCPF.Text = partes[1].Trim();
+                    txtEmail.Text = partes[2].Trim();
+                    txtCEP.Text = partes[3].Trim();
+                    txtLogradouro.Text = partes[4].Trim();
+                    txtNumero.Text = partes[5].Trim();
+                    txtBairro.Text = partes[6].Trim();
+                    txtCidade.Text = partes[7].Trim();
+                    txtEstado.Text = partes[8].Trim();
+                    txtTelefone.Text = partes[9].Trim();
+                    txtWhatsapp.Text = partes[10].Trim();
                     break;
                 }
             }
