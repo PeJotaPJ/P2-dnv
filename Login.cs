@@ -18,12 +18,15 @@ namespace P22
                 frmPrincipal principalForm = new frmPrincipal();
                 principalForm.Show();
                 this.Hide();
+                principalForm.UsuarioLogado = txtUsuario.Text.Trim();
 
             }
             else
             {
                 MessageBox.Show("Senha ou usuário inválidos");
+
             }
+            
         }
     }
 }

@@ -16,6 +16,7 @@ namespace P22
         {
             InitializeComponent();
         }
+        public string UsuarioLogado { get; set; }
 
         private void btCadastroClientes_Click(object sender, EventArgs e)
         {
@@ -35,10 +36,19 @@ namespace P22
             cadastroPedidosForm.Show();
         }
 
+        // No evento de abertura do Cadastro de Usuário (ex: botão "Cadastrar Usuário")
         private void btCadastroUsuario_Click(object sender, EventArgs e)
         {
-            Cadastro_de_Usuario cadastroUsuarioForm = new Cadastro_de_Usuario();
-            cadastroUsuarioForm.Show();
+            // Supondo que você armazene o usuário logado em uma propriedade pública
+            if (UsuarioLogado != "ADMIN")
+            {
+                MessageBox.Show("Apenas o usuário ADMIN pode acessar o cadastro de usuários.", "Acesso negado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Só ADMIN chega aqui
+            var cadastroUsuarioForm = new Cadastro_de_Usuario();
+            cadastroUsuarioForm.ShowDialog();
         }
     }
 }
