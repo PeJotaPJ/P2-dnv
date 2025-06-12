@@ -34,6 +34,12 @@
             textBox2 = new TextBox();
             label3 = new Label();
             textBox3 = new TextBox();
+            txtCodigo = new TextBox();
+            label4 = new Label();
+            lbProdutos = new ListBox();
+            btSalvar = new Button();
+            btExcluir = new Button();
+            btAtualizar = new Button();
             SuspendLayout();
             // 
             // textBox1
@@ -85,11 +91,72 @@
             textBox3.Size = new Size(140, 99);
             textBox3.TabIndex = 4;
             // 
+            // txtCodigo
+            // 
+            txtCodigo.Location = new Point(172, 35);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new Size(100, 23);
+            txtCodigo.TabIndex = 6;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(172, 17);
+            label4.Name = "label4";
+            label4.Size = new Size(108, 15);
+            label4.TabIndex = 7;
+            label4.Text = "Código de produto";
+            // 
+            // lbProdutos
+            // 
+            lbProdutos.FormattingEnabled = true;
+            lbProdutos.Location = new Point(172, 73);
+            lbProdutos.Name = "lbProdutos";
+            lbProdutos.Size = new Size(162, 154);
+            lbProdutos.TabIndex = 8;
+            lbProdutos.DoubleClick += lbProdutos_DoubleClick;
+            // 
+            // btSalvar
+            // 
+            btSalvar.Location = new Point(26, 242);
+            btSalvar.Name = "btSalvar";
+            btSalvar.Size = new Size(75, 23);
+            btSalvar.TabIndex = 9;
+            btSalvar.Text = "Salvar";
+            btSalvar.UseVisualStyleBackColor = true;
+            btSalvar.Click += btSalvar_Click;
+            // 
+            // btExcluir
+            // 
+            btExcluir.Location = new Point(107, 242);
+            btExcluir.Name = "btExcluir";
+            btExcluir.Size = new Size(75, 23);
+            btExcluir.TabIndex = 10;
+            btExcluir.Text = "Excluir";
+            btExcluir.UseVisualStyleBackColor = true;
+            btExcluir.Click += btExcluir_Click;
+            // 
+            // btAtualizar
+            // 
+            btAtualizar.Location = new Point(188, 242);
+            btAtualizar.Name = "btAtualizar";
+            btAtualizar.Size = new Size(75, 23);
+            btAtualizar.TabIndex = 11;
+            btAtualizar.Text = "Atualizar";
+            btAtualizar.UseVisualStyleBackColor = true;
+            btAtualizar.Click += btAtualizar_Click;
+            // 
             // Cadastro_de_Produtos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(382, 309);
+            Controls.Add(btAtualizar);
+            Controls.Add(btExcluir);
+            Controls.Add(btSalvar);
+            Controls.Add(lbProdutos);
+            Controls.Add(label4);
+            Controls.Add(txtCodigo);
             Controls.Add(label3);
             Controls.Add(textBox3);
             Controls.Add(label2);
@@ -110,5 +177,11 @@
         private TextBox textBox2;
         private Label label3;
         private TextBox textBox3;
+        private TextBox txtCodigo;
+        private Label label4;
+        private ListBox lbProdutos;
+        private Button btSalvar;
+        private Button btExcluir;
+        private Button btAtualizar;
     }
 }

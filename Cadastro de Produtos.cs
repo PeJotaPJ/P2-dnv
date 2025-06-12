@@ -10,11 +10,31 @@ using System.Windows.Forms;
 
 namespace P22
 {
-    public partial class Cadastro_de_Produtos: Form
+    public partial class Cadastro_de_Produtos : Form
     {
         public Cadastro_de_Produtos()
         {
             InitializeComponent();
+        }
+
+        private void btSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btAtualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbProdutos_DoubleClick(object sender, EventArgs e)
+        {
+
         }
     }
 }
