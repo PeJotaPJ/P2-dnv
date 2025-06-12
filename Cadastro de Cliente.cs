@@ -10,6 +10,7 @@ namespace P22
 {
     public partial class Cadastro_de_Cliente : Form
     {
+        private string cpfOriginalEmEdicao = null;
         public Cadastro_de_Cliente()
         {
             InitializeComponent();
@@ -171,6 +172,8 @@ namespace P22
 
             string itemSelecionado = lbClientes.SelectedItem.ToString();
             string cpfSelecionado = itemSelecionado.Split('-')[0].Trim();
+            cpfOriginalEmEdicao = cpfSelecionado; // Salva o CPF original
+
             string caminhoCsv = "Clientes.csv";
             if (!File.Exists(caminhoCsv))
                 return;
@@ -219,6 +222,48 @@ namespace P22
                     // Exibe CPF - Nome
                     lbClientes.Items.Add($"{partes[1].Trim()} - {partes[0].Trim()}");
                 }
+            }
+        }
+
+        private void btAtualizar_Click(object sender, EventArgs e)
+        {
+            if (cpfOriginalEmEdicao == null)
+            {
+                MessageBox.Show("Nenhum cliente selecionado para edição.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string caminhoCsv = "Clientes.csv";
+            if (!File.Exists(caminhoCsv))
+                return;
+
+            var linhas = File.ReadAllLines(caminhoCsv).ToList();
+            bool alterado = false;
+
+            // Mantém o cabeçalho
+            for (int i = 1; i < linhas.Count; i++)
+            {
+                var partes = linhas[i].Split(',');
+                if (partes.Length >= 2 && partes[1].Trim() == cpfOriginalEmEdicao)
+                {
+                    // Atualiza a linha com os novos dados
+                    linhas[i] = $"{txtNome.Text},{txtCPF.Text},{txtEmail.Text},{txtCEP.Text},{txtLogradouro.Text},{txtNumero.Text},{txtBairro.Text},{txtCidade.Text},{txtEstado.Text},{txtTelefone.Text},{txtWhatsapp.Text}";
+                    alterado = true;
+                    break;
+                }
+            }
+
+            if (alterado)
+            {
+                File.WriteAllLines(caminhoCsv, linhas, Encoding.UTF8);
+                MessageBox.Show("Cliente atualizado com sucesso!", "Atualização", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimparCampos();
+                cpfOriginalEmEdicao = null;
+                CarregarClientesNoListBox();
+            }
+            else
+            {
+                MessageBox.Show("Cliente não encontrado para atualização.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

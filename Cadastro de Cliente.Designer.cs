@@ -55,6 +55,7 @@
             btExcluir = new Button();
             lbClientes = new ListBox();
             txtCPF = new TextBox();
+            btAtualizar = new Button();
             SuspendLayout();
             // 
             // txtNome
@@ -275,11 +276,22 @@
             txtCPF.Size = new Size(154, 23);
             txtCPF.TabIndex = 29;
             // 
+            // btAtualizar
+            // 
+            btAtualizar.Location = new Point(626, 365);
+            btAtualizar.Name = "btAtualizar";
+            btAtualizar.Size = new Size(75, 23);
+            btAtualizar.TabIndex = 30;
+            btAtualizar.Text = "Atualizar";
+            btAtualizar.UseVisualStyleBackColor = true;
+            btAtualizar.Click += btAtualizar_Click;
+            // 
             // Cadastro_de_Cliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(853, 391);
+            Controls.Add(btAtualizar);
             Controls.Add(txtCPF);
             Controls.Add(lbClientes);
             Controls.Add(btExcluir);
@@ -342,5 +354,6 @@
         private Button btExcluir;
         private ListBox lbClientes;
         private TextBox txtCPF;
+        private Button btAtualizar;
     }
 }
