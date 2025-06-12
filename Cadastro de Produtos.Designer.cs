@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            txtProduto = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            textBox2 = new TextBox();
+            txtPreco = new TextBox();
             label3 = new Label();
-            textBox3 = new TextBox();
+            txtDescricao = new TextBox();
             txtCodigo = new TextBox();
             label4 = new Label();
             lbProdutos = new ListBox();
@@ -42,12 +42,12 @@
             btAtualizar = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // txtProduto
             // 
-            textBox1.Location = new Point(26, 35);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(140, 23);
-            textBox1.TabIndex = 0;
+            txtProduto.Location = new Point(26, 35);
+            txtProduto.Name = "txtProduto";
+            txtProduto.Size = new Size(140, 23);
+            txtProduto.TabIndex = 0;
             // 
             // label1
             // 
@@ -67,12 +67,12 @@
             label2.TabIndex = 3;
             label2.Text = "Preço";
             // 
-            // textBox2
+            // txtPreco
             // 
-            textBox2.Location = new Point(26, 91);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(140, 23);
-            textBox2.TabIndex = 2;
+            txtPreco.Location = new Point(26, 91);
+            txtPreco.Name = "txtPreco";
+            txtPreco.Size = new Size(140, 23);
+            txtPreco.TabIndex = 2;
             // 
             // label3
             // 
@@ -83,13 +83,13 @@
             label3.TabIndex = 5;
             label3.Text = "Descrição";
             // 
-            // textBox3
+            // txtDescricao
             // 
-            textBox3.Location = new Point(26, 137);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(140, 99);
-            textBox3.TabIndex = 4;
+            txtDescricao.Location = new Point(26, 137);
+            txtDescricao.Multiline = true;
+            txtDescricao.Name = "txtDescricao";
+            txtDescricao.Size = new Size(140, 99);
+            txtDescricao.TabIndex = 4;
             // 
             // txtCodigo
             // 
@@ -158,11 +158,11 @@
             Controls.Add(label4);
             Controls.Add(txtCodigo);
             Controls.Add(label3);
-            Controls.Add(textBox3);
+            Controls.Add(txtDescricao);
             Controls.Add(label2);
-            Controls.Add(textBox2);
+            Controls.Add(txtPreco);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtProduto);
             Name = "Cadastro_de_Produtos";
             Text = "Cadastro_de_Produtos";
             ResumeLayout(false);
@@ -171,12 +171,12 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox txtProduto;
         private Label label1;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox txtPreco;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox txtDescricao;
         private TextBox txtCodigo;
         private Label label4;
         private ListBox lbProdutos;
